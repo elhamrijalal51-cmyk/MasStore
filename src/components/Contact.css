@@ -1,0 +1,123 @@
+
+/* ==========================
+   File: Contact.css
+   Place this file next to Contact.jsx and import it (déjà fait en haut).
+   ========================== */
+
+:root{
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --accent: #0f62fe;
+  --muted: #6b7280;
+  --danger: #dc2626;
+  --success: #16a34a;
+}
+
+*{box-sizing:border-box}
+body {font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
+
+.contact-section{
+  padding: 2.5rem 1rem;
+  display:flex;
+  justify-content:center;
+  background: linear-gradient(180deg, var(--bg), #ffffff);
+}
+
+.contact-card{
+  width:100%;
+  max-width: 780px;
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(15,23,42,0.06);
+  padding: 2rem;
+  gap:1.5rem;
+  display:flex;
+  flex-direction:column;
+}
+
+.contact-title{
+  margin:0 0 0.5rem 0;
+  font-size:1.5rem;
+}
+
+.contact-form{
+  display:grid;
+  gap:1rem;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+}
+
+.label-text{
+  font-size:0.9rem;
+  color: var(--muted);
+  margin-bottom:0.35rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea{
+  border:1px solid #e6e9ef;
+  padding:0.65rem 0.75rem;
+  border-radius:8px;
+  font-size:1rem;
+  outline:none;
+  transition: box-shadow .12s ease, border-color .12s ease;
+}
+
+input:focus, textarea:focus{
+  border-color: var(--accent);
+  box-shadow: 0 6px 18px rgba(15,98,254,0.08);
+}
+
+.error{
+  margin-top:0.45rem;
+  font-size:0.875rem;
+  color: var(--danger);
+}
+
+.success{
+  color: var(--success);
+}
+
+.actions{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+}
+
+.btn{
+  background: var(--accent);
+  color: white;
+  padding:0.6rem 1rem;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  min-width:110px;
+}
+
+.btn[disabled]{
+  opacity:0.6;
+  cursor:not-allowed;
+}
+
+.status-msg{
+  font-size:0.95rem;
+}
+
+.contact-info{
+  margin-top:1rem;
+  border-top:1px dashed #eef2ff;
+  padding-top:1rem;
+  color:var(--muted);
+}
+
+.contact-info a{ color:var(--accent); text-decoration:none }
+
+@media (max-width:600px){
+  .contact-card{ padding:1rem }
+  .contact-title{ font-size:1.25rem }
+}

@@ -1,0 +1,154 @@
+/* === RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  
+  font-family: "Poppins", sans-serif;
+  /* background: url("./img/2.png") center/cover no-repeat; */
+  color: #000000;
+  background-color: #000000;
+  overflow-x: hidden;
+  background-size: cover;
+  
+}
+
+/* === NAVBAR === */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+  background: #000;
+  border-bottom: 2px solid #fdd835;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fdd835;
+}
+
+.brand span {
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #f2f2f2;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #fdd835;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.btn.primary {
+  background-color: #fdd835;
+  color: #000000;
+}
+
+.btn.ghost {
+  background-color: transparent;
+  border: 1px solid #fdd835;
+  color: #fdd835;
+}
+
+.btn.ghost:hover,
+.btn.primary:hover {
+  background-color: #fdd835;
+  color: #000;
+}
+
+.cart-btn {
+  position: relative;
+}
+
+.cart-count {
+  background-color: #fdd835;
+  color: #000;
+  border-radius: 50%;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  position: absolute;
+  top: -8px;
+  right: -10px;
+}
+
+/* === CONTENU === */
+.content {
+  padding: 2rem 3rem;
+  min-height: 70vh;
+}
+
+/* === FOOTER === */
+.site-footer {
+  background: #000;
+  color: #bbb;
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid #fdd835;
+}
+
+.footer-links a {
+  margin-left: 1rem;
+  color: #fdd835;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

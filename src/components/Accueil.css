@@ -1,0 +1,134 @@
+/* === SECTION SLIDER === */
+.panorama {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  background: #000;
+}
+
+/* Animation de défilement fluide */
+.panorama-track {
+  display: flex;
+  width: calc(110%);
+  animation: slide infinite linear;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-300%);
+  }
+}
+
+/* Chaque image du slider */
+.panorama-item {
+  flex: 0 0 100%;
+  position: relative;
+  filter: brightness(80%);
+  transition: transform 10s ease-in-out;
+}
+
+.panorama-item img {
+  width: 97%;
+  height: 90vh;
+  object-fit: cover;
+  transform: scale(1.05);
+  transition: transform 5s ease;
+}
+
+.panorama-item img:hover {
+  transform: scale(1.1);
+}
+
+/* Dégradé sombre sur les bords pour lisibilité du texte */
+.panorama-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.85));
+  z-index: 2;
+}
+
+/* Contenu texte au-dessus du slider */
+.panorama-content {
+  position: absolute;
+  top: 38%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: #ffffff;
+  z-index: 3;
+  max-width: 1100px;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
+
+/* === TEXTE PRINCIPAL === */
+.hero-content h1 {
+  font-size: 2rem;
+  line-height: 2;
+  font-weight: 800;
+  margin-bottom: 30px;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
+  letter-spacing: 1.7px;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  margin-bottom: 25px;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* === BOUTON === */
+.hero-btn {
+  background: linear-gradient(135deg, #ffb300, #ffcf40);
+  color: #111;
+  font-weight: 700;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.05rem;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 179, 0, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+
+.hero-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(255, 179, 0, 0.6);
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 900px) {
+  .panorama-content {
+    left: 5%;
+    max-width: 90%;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-btn {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+}
